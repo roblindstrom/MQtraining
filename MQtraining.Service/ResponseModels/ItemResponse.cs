@@ -10,8 +10,8 @@ namespace MQtraining.Services.ResponseModels
     {
         public Guid ItemId { get; set; }
 
-        public int Quantity { get; set; }
+        public string Name { get; set; }
 
-        public OrderResponse Order { get; set; }
+        public double Price { get; set; }
     }
 }

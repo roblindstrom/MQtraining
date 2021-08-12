@@ -12,7 +12,7 @@ namespace MQtraining.Shared.Models
 
         public Guid Password { get; set; }
 
-        public IEnumerable<Item> Items { get; set; }
+        public IEnumerable<LineItem> LineItems { get; set; }
 
     }
 }

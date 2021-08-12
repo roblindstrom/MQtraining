@@ -25,17 +25,39 @@ namespace MQtraining.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("ItemId");
+
+                    b.ToTable("Item");
+                });
+
+            modelBuilder.Entity("MQtraining.Shared.Models.LineItem", b =>
+                {
+                    b.Property<Guid>("LineItemId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ItemId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid?>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("ItemId");
+                    b.HasKey("LineItemId");
+
+                    b.HasIndex("ItemId");
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("Item");
+                    b.ToTable("LineItem");
                 });
 
             modelBuilder.Entity("MQtraining.Shared.Models.Order", b =>
@@ -52,18 +74,29 @@ namespace MQtraining.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("MQtraining.Shared.Models.Item", b =>
+            modelBuilder.Entity("MQtraining.Shared.Models.LineItem", b =>
                 {
+                    b.HasOne("MQtraining.Shared.Models.Item", "Item")
+                        .WithMany("LineItems")
+                        .HasForeignKey("ItemId");
+
                     b.HasOne("MQtraining.Shared.Models.Order", "Order")
-                        .WithMany("Items")
+                        .WithMany("LineItems")
                         .HasForeignKey("OrderId");
+
+                    b.Navigation("Item");
 
                     b.Navigation("Order");
                 });
 
+            modelBuilder.Entity("MQtraining.Shared.Models.Item", b =>
+                {
+                    b.Navigation("LineItems");
+                });
+
             modelBuilder.Entity("MQtraining.Shared.Models.Order", b =>
                 {
-                    b.Navigation("Items");
+                    b.Navigation("LineItems");
                 });
 #pragma warning restore 612, 618
         }

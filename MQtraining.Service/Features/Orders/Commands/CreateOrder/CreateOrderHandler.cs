@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MQtraining.Services.DTOModels;
 using MQtraining.Services.ResponseModels;
 using MQtraining.Services.ViewModels;
 using MQtraining.Shared.IRepository;
@@ -31,12 +32,12 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
             {
                 OrderId = new Guid(),
                 Password = new Guid(),
-                Items = _mapper.Map<IEnumerable<Item>>(viewOrder.Items)
+                LineItems = _mapper.Map<IEnumerable<LineItem>>(viewOrder.LineItems)
             };
 
                 await _orderRepository.AddAsync(order);
             var orderResponse = _mapper.Map<OrderResponse>(order);
-            orderResponse.Items = _mapper.Map<IEnumerable<ItemResponse>>(order.Items);
+            orderResponse.Items = _mapper.Map<IEnumerable<DTOLineItem>>(order.LineItems);
 
 
 

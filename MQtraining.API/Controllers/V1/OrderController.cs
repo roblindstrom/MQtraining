@@ -11,10 +11,10 @@ namespace MQtraining.API.Controllers.V1
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    public class OrdersController : Controller
+    public class OrderController : Controller
     {
         public readonly ICreateOrderService _createOrderService;
-        public OrdersController(ICreateOrderService createOrderService)
+        public OrderController(ICreateOrderService createOrderService)
         {
             _createOrderService = createOrderService;
         }
@@ -24,6 +24,6 @@ namespace MQtraining.API.Controllers.V1
         {
             return await _createOrderService.CreateOrder(orderview);
         }
-        
+
     }
 }
