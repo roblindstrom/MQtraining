@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MQtraining.Services.DTOModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,6 @@ namespace MQtraining.Services.ResponseModels
 
         public Guid Password { get; set; }
 
-        public IEnumerable<ItemResponse> Items { get; set; }
+        public IEnumerable<DTOLineItem> Items { get; set; }
     }
 }

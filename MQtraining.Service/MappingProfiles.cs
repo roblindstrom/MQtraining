@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MQtraining.Services.DTOModels;
 using MQtraining.Services.ResponseModels;
 using MQtraining.Services.ViewModels;
 using MQtraining.Shared.Models;
@@ -18,11 +19,22 @@ namespace MQtraining.Services
             CreateMap<OrderResponse, ViewOrder>();
             CreateMap<Order, ViewOrder>();
             CreateMap<Order, OrderResponse>();
+            CreateMap<ViewOrder, Order>();
 
             //Item Maps
             CreateMap<ItemResponse, ViewItem>();
             CreateMap<Item, ViewItem>();
             CreateMap<Item, ItemResponse>();
+            CreateMap<ViewItem, Item>();
+
+            //LineItem Maps
+            CreateMap<LineItem, ViewLineItem>();
+            CreateMap<LineItem, LineItemResponse>();
+            CreateMap<LineItem, DTOLineItem>();
+            
+
+            
+            
 
         }
     }

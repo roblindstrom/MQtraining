@@ -15,9 +15,9 @@ namespace MQtraining.Data.Configurations
             modelBuilder
                 .HasKey(order => order.OrderId);
 
-            //modelBuilder
-            //    .HasMany(order => order.Items)
-            //    .WithOne(item => item.Order);
+            modelBuilder
+                .HasMany(order => order.LineItems)
+                .WithOne(lineItem => lineItem.Order);
         }
     }
 }

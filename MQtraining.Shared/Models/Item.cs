@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MQtraining.Shared.Models
 {
@@ -6,10 +7,11 @@ namespace MQtraining.Shared.Models
     {
         public Guid ItemId { get; set; }
 
-        public int Quantity { get; set; }
+        public string Name { get; set; }
 
-        public Order Order { get; set; }
+        public double Price { get; set; }
 
+        public IEnumerable<LineItem> LineItems { get; set; }
 
     }
 }

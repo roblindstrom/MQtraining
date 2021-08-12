@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using MQtraining.Data;
 using MQtraining.Data.Repositories;
+using MQtraining.Services.Features.Items.Commands.CreateItem;
+using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
 using MQtraining.Shared.IRepository;
 using System;
@@ -24,6 +26,14 @@ namespace MQtraining.Services
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICreateOrderService, CreateOrderHandler>();
 
+            //Item services
+            services.AddScoped<IItemRepository, ItemRepository>();
+            services.AddScoped<ICreateItemService, CreateItemHandler>();
+
+            //LineItem services
+            services.AddScoped<ILineItemRepository, LineItemRepository>();
+            services.AddScoped<ICreateLineItemService, CreateLineItemHandler>();
+            
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddDataServices(configuration);
