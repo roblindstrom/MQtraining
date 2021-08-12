@@ -34,6 +34,10 @@ namespace MQtraining.API
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MQtraining.API", Version = "v1" });
             });
 
+            services.AddControllers()
+           .AddNewtonsoftJson(x => x.SerializerSettings
+           .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
+
             services.AddServices(Configuration);
         }
 

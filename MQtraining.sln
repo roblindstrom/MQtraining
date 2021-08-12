@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQtraining.Data", "MQtraining\MQtraining.Data.csproj", "{E4B2DCE4-2346-427F-8B52-AE0DE09C67DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.Services", "MQtraining.Service\MQtraining.Services.csproj", "{C020205B-C376-45D5-A140-0F2EF59C9B0D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQtraining.Services", "MQtraining.Service\MQtraining.Services.csproj", "{C020205B-C376-45D5-A140-0F2EF59C9B0D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.API", "MQtraining.API\MQtraining.API.csproj", "{BB0D56D2-3DAB-43C3-A837-C62231E782E5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQtraining.API", "MQtraining.API\MQtraining.API.csproj", "{BB0D56D2-3DAB-43C3-A837-C62231E782E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.Shared", "MQtraining.Shared\MQtraining.Shared.csproj", "{3FC1C519-51F1-4B70-AD4C-CC1BF55B8515}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQtraining.Shared", "MQtraining.Shared\MQtraining.Shared.csproj", "{3FC1C519-51F1-4B70-AD4C-CC1BF55B8515}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.Data", "MQtraining.Data\MQtraining.Data.csproj", "{35110557-D2A5-4F20-B3F0-91DE245BBB26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E4B2DCE4-2346-427F-8B52-AE0DE09C67DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4B2DCE4-2346-427F-8B52-AE0DE09C67DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4B2DCE4-2346-427F-8B52-AE0DE09C67DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4B2DCE4-2346-427F-8B52-AE0DE09C67DB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C020205B-C376-45D5-A140-0F2EF59C9B0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C020205B-C376-45D5-A140-0F2EF59C9B0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C020205B-C376-45D5-A140-0F2EF59C9B0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +29,10 @@ Global
 		{3FC1C519-51F1-4B70-AD4C-CC1BF55B8515}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FC1C519-51F1-4B70-AD4C-CC1BF55B8515}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FC1C519-51F1-4B70-AD4C-CC1BF55B8515}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35110557-D2A5-4F20-B3F0-91DE245BBB26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35110557-D2A5-4F20-B3F0-91DE245BBB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35110557-D2A5-4F20-B3F0-91DE245BBB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35110557-D2A5-4F20-B3F0-91DE245BBB26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

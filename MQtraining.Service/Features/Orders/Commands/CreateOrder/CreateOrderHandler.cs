@@ -11,8 +11,9 @@ using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
 {
-    public class CreateOrderHandler
+    public class CreateOrderHandler : ICreateOrderService
     {
+
         private readonly IOrderRepository _orderRepository;
         private readonly IMapper _mapper;
 
@@ -37,7 +38,7 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
             var orderResponse = _mapper.Map<OrderResponse>(order);
             orderResponse.Items = _mapper.Map<IEnumerable<ItemResponse>>(order.Items);
 
-            
+
 
             return orderResponse;
 
