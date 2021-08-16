@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Orders\Queries\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MQtraining.Data\MQtraining.Data.csproj" />
   </ItemGroup>
 

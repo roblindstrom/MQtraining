@@ -1,0 +1,33 @@
+﻿@page "/Orders"
+
+<h3>ShowAllOrders</h3>
+
+@if (Orders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Password</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Orders)
+            {
+                <tr>
+                   <td>
+                       @order.OrderId
+                   </td>
+                    <td>
+                        @order.Password
+                    </td>
+                </tr>
+             }
+        </tbody>
+    </table>
+}
