@@ -30,6 +30,7 @@ namespace MQtraining.Services
             //LineItem Maps
             CreateMap<LineItem, ViewLineItem>();
             CreateMap<LineItem, LineItemResponse>();
+            CreateMap<DTOLineItem, LineItem>();
             CreateMap<LineItem, DTOLineItem>();
             
 

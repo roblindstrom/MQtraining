@@ -5,6 +5,7 @@ using MQtraining.Data.Repositories;
 using MQtraining.Services.Features.Items.Commands.CreateItem;
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
+using MQtraining.Services.Features.Orders.Queries.GetAllOrders;
 using MQtraining.Shared.IRepository;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace MQtraining.Services
             //Order services
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICreateOrderService, CreateOrderHandler>();
+            services.AddScoped<IGetAllOrdersService, GetAllOrdersHandler>();
 
             //Item services
             services.AddScoped<IItemRepository, ItemRepository>();
