@@ -1,13 +1,11 @@
 ﻿using AutoMapper;
-using MQtraining.Services.DTOModels;
-using MQtraining.Services.ResponseModels;
-using MQtraining.Services.ViewModels;
+using MQtraining.Shared.CommandModels;
+using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
+using MQtraining.Shared.ResponseModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
@@ -25,17 +23,17 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
         }
 
 
-        public async Task<OrderResponse> CreateOrder(ViewOrder viewOrder)
+        public async Task<OrderResponse> CreateOrder(OrderCommand orderCommand)
         {
-            
+
             var order = new Order()
             {
                 OrderId = new Guid(),
                 Password = new Guid(),
-                LineItems = _mapper.Map<IEnumerable<LineItem>>(viewOrder.LineItems)
+                LineItems = _mapper.Map<IEnumerable<LineItem>>(orderCommand.LineItems)
             };
 
-                await _orderRepository.AddAsync(order);
+            await _orderRepository.AddAsync(order);
             var orderResponse = _mapper.Map<OrderResponse>(order);
             orderResponse.Items = _mapper.Map<IEnumerable<DTOLineItem>>(order.LineItems);
 

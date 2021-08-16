@@ -1,11 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
 using MQtraining.Services.Features.Orders.Queries.GetAllOrders;
-using MQtraining.Services.ResponseModels;
-using MQtraining.Services.ViewModels;
-using System;
+using MQtraining.Shared.CommandModels;
+using MQtraining.Shared.ResponseModels;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MQtraining.API.Controllers.V1
@@ -23,13 +21,13 @@ namespace MQtraining.API.Controllers.V1
         }
 
         [HttpPost("")]
-        public async Task<OrderResponse> CreateOrder(ViewOrder orderview)
+        public async Task<OrderResponse> CreateOrder(OrderCommand orderCommand)
         {
-            return await _createOrderService.CreateOrder(orderview);
+            return await _createOrderService.CreateOrder(orderCommand);
         }
 
         [HttpGet("")]
-        public async Task<List<OrderResponse>> GetAllOrders() 
+        public async Task<List<OrderResponse>> GetAllOrders()
         {
             return await _getAllOrdersService.GetAllOrders();
         }

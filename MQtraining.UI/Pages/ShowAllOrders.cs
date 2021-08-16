@@ -1,9 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using MQtraining.Services.ResponseModels;
+using MQtraining.Shared.ResponseModels;
 using MQtraining.UI.Services;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages

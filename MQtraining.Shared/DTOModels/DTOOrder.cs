@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace MQtraining.Services.DTOModels
+namespace MQtraining.Shared.DTOModels
 {
     public class DTOOrder
     {

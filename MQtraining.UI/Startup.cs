@@ -1,15 +1,10 @@
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MQtraining.UI.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MQtraining.UI
 {
@@ -28,7 +23,7 @@ namespace MQtraining.UI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            
+
             services.AddHttpClient<IOrderDataService, OrderDataService>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44337/");

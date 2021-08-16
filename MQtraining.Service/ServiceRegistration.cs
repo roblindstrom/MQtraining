@@ -7,20 +7,15 @@ using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
 using MQtraining.Services.Features.Orders.Queries.GetAllOrders;
 using MQtraining.Shared.IRepository;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MQtraining.Services
 {
     public static class ServiceRegistration
     {
-        
-            public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
-            {
+
+        public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
+        {
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
 
             //Order services
@@ -35,13 +30,13 @@ namespace MQtraining.Services
             //LineItem services
             services.AddScoped<ILineItemRepository, LineItemRepository>();
             services.AddScoped<ICreateLineItemService, CreateLineItemHandler>();
-            
+
 
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddDataServices(configuration);
 
-                return services;
-            }
-       
+            return services;
+        }
+
     }
 }

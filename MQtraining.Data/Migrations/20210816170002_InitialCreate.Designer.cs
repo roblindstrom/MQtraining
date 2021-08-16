@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MQtraining.Data.Migrations
 {
     [DbContext(typeof(MQtrainingDbContext))]
-    [Migration("20210812115740_SecondCreate")]
-    partial class SecondCreate
+    [Migration("20210816170002_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

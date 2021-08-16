@@ -1,13 +1,8 @@
 ﻿using AutoMapper;
-using MQtraining.Services.DTOModels;
-using MQtraining.Services.ResponseModels;
-using MQtraining.Services.ViewModels;
+using MQtraining.Shared.CommandModels;
+using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MQtraining.Shared.ResponseModels;
 
 namespace MQtraining.Services
 {
@@ -16,26 +11,26 @@ namespace MQtraining.Services
         public MappingProfiles()
         {
             // Order Maps
-            CreateMap<OrderResponse, ViewOrder>();
-            CreateMap<Order, ViewOrder>();
+            CreateMap<OrderResponse, OrderCommand>();
+            CreateMap<Order, OrderCommand>();
             CreateMap<Order, OrderResponse>();
-            CreateMap<ViewOrder, Order>();
+            CreateMap<OrderCommand, Order>();
 
             //Item Maps
-            CreateMap<ItemResponse, ViewItem>();
-            CreateMap<Item, ViewItem>();
+            CreateMap<ItemResponse, ItemCommand>();
+            CreateMap<Item, ItemCommand>();
             CreateMap<Item, ItemResponse>();
-            CreateMap<ViewItem, Item>();
+            CreateMap<ItemCommand, Item>();
 
             //LineItem Maps
-            CreateMap<LineItem, ViewLineItem>();
+            CreateMap<LineItem, LineItemCommand>();
             CreateMap<LineItem, LineItemResponse>();
             CreateMap<DTOLineItem, LineItem>();
             CreateMap<LineItem, DTOLineItem>();
-            
 
-            
-            
+
+
+
 
         }
     }

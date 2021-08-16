@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
-using MQtraining.Services.ResponseModels;
-using MQtraining.Services.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using MQtraining.Shared.CommandModels;
+using MQtraining.Shared.ResponseModels;
 using System.Threading.Tasks;
 
 namespace MQtraining.API.Controllers.V1
@@ -21,9 +18,9 @@ namespace MQtraining.API.Controllers.V1
         }
 
         [HttpPost]
-        public async Task<LineItemResponse> CreateLineItem(ViewLineItem viewLineItem) 
+        public async Task<LineItemResponse> CreateLineItem(LineItemCommand lineItemCommand)
         {
-            return await _createLineItemService.CreateLineItem(viewLineItem);
+            return await _createLineItemService.CreateLineItem(lineItemCommand);
         }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using AutoMapper;
-using MQtraining.Services.DTOModels;
-using MQtraining.Services.ResponseModels;
+using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.IRepository;
-using System;
+using MQtraining.Shared.ResponseModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.Orders.Queries.GetAllOrders
@@ -21,7 +18,7 @@ namespace MQtraining.Services.Features.Orders.Queries.GetAllOrders
             _orderRepository = orderRepository;
         }
 
-        public async Task<List<OrderResponse>> GetAllOrders() 
+        public async Task<List<OrderResponse>> GetAllOrders()
         {
             var orders = await _orderRepository.ListAllAsync();
             var orderResponses = new List<OrderResponse>();
@@ -32,7 +29,7 @@ namespace MQtraining.Services.Features.Orders.Queries.GetAllOrders
                 orderResponse.Items = _mapper.Map<List<DTOLineItem>>(order.LineItems);
                 orderResponses.Add(orderResponse);
             }
-            
+
 
             return orderResponses;
         }

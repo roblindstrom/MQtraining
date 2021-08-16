@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using MQtraining.Services.ResponseModels;
-using MQtraining.Services.ViewModels;
+using MQtraining.Shared.CommandModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
+using MQtraining.Shared.ResponseModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
@@ -26,17 +23,17 @@ namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
             _orderRepository = orderRepository;
         }
 
-        public async Task<LineItemResponse> CreateLineItem(ViewLineItem viewLineItem) 
+        public async Task<LineItemResponse> CreateLineItem(LineItemCommand lineItemCommand)
         {
-            
+
 
             var lineitem = new LineItem()
             {
                 LineItemId = new Guid(),
-                Quantity = viewLineItem.Quantity,
-                Item = await _itemRepository.GetByIdAsync(viewLineItem.Item.ItemId),
-                Order = await _orderRepository.GetByIdAsync(viewLineItem.Order.OrderId)
-        };
+                Quantity = lineItemCommand.Quantity,
+                Item = await _itemRepository.GetByIdAsync(lineItemCommand.Item.ItemId),
+                Order = await _orderRepository.GetByIdAsync(lineItemCommand.Order.OrderId)
+            };
 
             await _lineItemRepository.AddAsync(lineitem);
             return _mapper.Map<LineItemResponse>(lineitem);
