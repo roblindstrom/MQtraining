@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.Shared", "MQtrai
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.Data", "MQtraining.Data\MQtraining.Data.csproj", "{35110557-D2A5-4F20-B3F0-91DE245BBB26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQtraining.UI", "MQtraining.UI\MQtraining.UI.csproj", "{C109D5A4-1600-415A-A7B8-4B153676E86A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MQtraining.UI", "MQtraining.UI\MQtraining.UI.csproj", "{C109D5A4-1600-415A-A7B8-4B153676E86A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace MQtraining.Shared.CommandModels
+namespace MQtraining.Shared.RequestModels
 {
-    public class ItemCommand
+    public class ItemRequest
     {
         public Guid ItemId { get; set; }
 

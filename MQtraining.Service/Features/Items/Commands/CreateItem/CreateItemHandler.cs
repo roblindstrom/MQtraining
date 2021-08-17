@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using MQtraining.Shared.CommandModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
+using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using System;
 using System.Threading.Tasks;
@@ -19,13 +19,13 @@ namespace MQtraining.Services.Features.Items.Commands.CreateItem
             _itemRepository = itemRepository;
         }
 
-        public async Task<ItemResponse> CreateItem(ItemCommand itemCommand)
+        public async Task<ItemResponse> CreateItem(ItemRequest itemRequest)
         {
             var item = new Item()
             {
                 ItemId = new Guid(),
-                Name = itemCommand.Name,
-                Price = itemCommand.Price
+                Name = itemRequest.Name,
+                Price = itemRequest.Price
 
             };
 

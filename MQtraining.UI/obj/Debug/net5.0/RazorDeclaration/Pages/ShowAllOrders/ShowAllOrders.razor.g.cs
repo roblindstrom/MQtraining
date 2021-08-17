@@ -4,7 +4,7 @@
 #pragma warning disable 0649
 #pragma warning disable 0169
 
-namespace MQtraining.UI.Pages
+namespace MQtraining.UI.Pages.ShowAllOrders
 {
     #line hidden
     using System;

@@ -12,4 +12,8 @@
     <ProjectReference Include="..\MQtraining.Service\MQtraining.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\CreateItem\" />
+  </ItemGroup>
+
 </Project>

@@ -4,7 +4,7 @@ using MQtraining.UI.Services;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MQtraining.UI.Pages
+namespace MQtraining.UI.Pages.ShowAllOrders
 {
     public partial class ShowAllOrders
     {

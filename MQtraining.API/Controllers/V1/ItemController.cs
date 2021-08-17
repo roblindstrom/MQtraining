@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MQtraining.Services.Features.Items.Commands.CreateItem;
-using MQtraining.Shared.CommandModels;
+using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using System.Threading.Tasks;
 
@@ -20,9 +20,9 @@ namespace MQtraining.API.Controllers.V1
         }
 
         [HttpPost]
-        public async Task<ItemResponse> CreateItem(ItemCommand itemCommand)
+        public async Task<ItemResponse> CreateItem(ItemRequest itemRequest)
         {
-            return await _createItemService.CreateItem(itemCommand);
+            return await _createItemService.CreateItem(itemRequest);
         }
     }
 }

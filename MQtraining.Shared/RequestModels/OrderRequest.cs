@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace MQtraining.Shared.CommandModels
+namespace MQtraining.Shared.RequestModels
 {
-    public class OrderCommand
+    public class OrderRequest
     {
         public Guid OrderId { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using MQtraining.Shared.CommandModels;
 using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.Models;
+using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 
 namespace MQtraining.Services
@@ -11,19 +11,19 @@ namespace MQtraining.Services
         public MappingProfiles()
         {
             // Order Maps
-            CreateMap<OrderResponse, OrderCommand>();
-            CreateMap<Order, OrderCommand>();
+            CreateMap<OrderResponse, OrderRequest>();
+            CreateMap<Order, OrderRequest>();
             CreateMap<Order, OrderResponse>();
-            CreateMap<OrderCommand, Order>();
+            CreateMap<OrderRequest, Order>();
 
             //Item Maps
-            CreateMap<ItemResponse, ItemCommand>();
-            CreateMap<Item, ItemCommand>();
+            CreateMap<ItemResponse, ItemRequest>();
+            CreateMap<Item, ItemRequest>();
             CreateMap<Item, ItemResponse>();
-            CreateMap<ItemCommand, Item>();
+            CreateMap<ItemRequest, Item>();
 
             //LineItem Maps
-            CreateMap<LineItem, LineItemCommand>();
+            CreateMap<LineItem, LineItemRequest>();
             CreateMap<LineItem, LineItemResponse>();
             CreateMap<DTOLineItem, LineItem>();
             CreateMap<LineItem, DTOLineItem>();

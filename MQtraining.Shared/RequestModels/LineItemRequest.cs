@@ -1,9 +1,9 @@
 ﻿using MQtraining.Shared.DTOModels;
 using System;
 
-namespace MQtraining.Shared.CommandModels
+namespace MQtraining.Shared.RequestModels
 {
-    public class LineItemCommand
+    public class LineItemRequest
     {
         public Guid LineItemId { get; set; }
 
