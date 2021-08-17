@@ -4,7 +4,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Threading.Tasks;
 
-namespace MQtraining.UI.Services
+namespace MQtraining.UI.Services.Orders
 {
     public class OrderDataService : IOrderDataService
     {

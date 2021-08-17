@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MQtraining.UI.Services
+namespace MQtraining.UI.Services.Orders
 {
     public interface IOrderDataService
     {

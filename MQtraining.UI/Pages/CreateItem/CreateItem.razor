@@ -1,0 +1,25 @@
+﻿@page "/createitem"
+
+<h3>CreateItem</h3>
+
+<EditForm Model="@ItemRequest" OnValidSubmit="@HandleValidSubmit">
+
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">name: </label>
+        <InputText id="lastName" class="form-control" @bind-Value="@ItemRequest.Name" placeholder="Enter name"></InputText>
+        <ValidationMessage For="@(() => ItemRequest.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="price">price: </label>
+        <InputNumber id="firstName" class="form-control" @bind-Value="@ItemRequest.Price" placeholder="Enter price"></InputNumber>
+        <ValidationMessage For="@(() => ItemRequest.Price)" />
+    </div>
+
+    
+    <button type="submit" class="btn btn-primary">Save product</button>
+    
+</EditForm>

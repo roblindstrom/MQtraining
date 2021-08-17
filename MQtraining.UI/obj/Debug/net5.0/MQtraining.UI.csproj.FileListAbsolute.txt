@@ -90,8 +90,6 @@ C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\bin\Debug\net5.0\MQtra
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\bin\Debug\net5.0\MQtraining.Services.pdb
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\bin\Debug\net5.0\MQtraining.Data.pdb
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\bin\Debug\net5.0\MQtraining.Shared.pdb
-C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\ShowAllOrders.razor.g.cs
-C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllOrders.razor.g.cs
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\bin\Debug\net5.0\appsettings.json
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\bin\Debug\net5.0\MQtraining.UI.StaticWebAssets.xml
@@ -186,3 +184,9 @@ C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\MQtraining
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\ref\MQtraining.UI.dll
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\MQtraining.UI.pdb
 C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\MQtraining.UI.genruntimeconfig.cache
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\CreateItem\CreateItem.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\ShowAllOrders\ShowAllOrders.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\ShowAllItems\ShowAllItems.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\CreateItem\CreateItem.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllItems\ShowAllItems.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllOrders\ShowAllOrders.razor.g.cs

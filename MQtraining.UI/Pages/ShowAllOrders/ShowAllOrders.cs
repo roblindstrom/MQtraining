@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MQtraining.Shared.ResponseModels;
-using MQtraining.UI.Services;
+using MQtraining.UI.Services.Orders;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 

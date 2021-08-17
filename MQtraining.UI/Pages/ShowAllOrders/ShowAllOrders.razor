@@ -1,4 +1,4 @@
-﻿@page "/Orders"
+﻿@page "/orders"
 
 <h3>ShowAllOrders</h3>
 
@@ -19,14 +19,27 @@ else
         <tbody>
             @foreach (var order in Orders)
             {
-                <tr>
-                   <td>
-                       @order.OrderId
-                   </td>
-                    <td>
-                        @order.Password
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @order.OrderId
+
+                </td>
+                <td>
+                    @order.Password
+                </td>
+                <td>
+                    <a href="@($"order/{order.OrderId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="@($"orderedit/{order.OrderId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+                
+            </tr>
+
              }
         </tbody>
     </table>

@@ -40,7 +40,6 @@ namespace MQtraining.Data.Repositories
         }
 
 
-
         public async Task DeleteAsync(T entity)
         {
             _MQtrainingDbContext.Set<T>().Remove(entity);

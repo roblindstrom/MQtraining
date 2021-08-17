@@ -1,0 +1,54 @@
+﻿@page "/items"
+
+<h3>ShowAllItems</h3>
+
+
+@if (Items == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Password</th>
+                
+                <th><a href="@($"createitem/")" class="btn btn-primary table-btn">
+                    <i class="far fa-plus-square"></i>
+                    </a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+            <tr>
+                <td>
+                    @item.ItemId
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="@($"itemedit/{item.ItemId}")" class="btn btn-primary table-btn">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                </td>
+                
+            </tr>
+            }
+
+
+        </tbody>
+    </table>
+}

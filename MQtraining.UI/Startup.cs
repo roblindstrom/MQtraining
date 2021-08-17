@@ -3,7 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using MQtraining.UI.Services;
+using MQtraining.UI.Services.Items;
+using MQtraining.UI.Services.Orders;
 using System;
 
 namespace MQtraining.UI
@@ -25,6 +26,11 @@ namespace MQtraining.UI
             services.AddServerSideBlazor();
 
             services.AddHttpClient<IOrderDataService, OrderDataService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44337/");
+            });
+
+            services.AddHttpClient<IItemDataService, ItemDataService>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44337/");
             });
