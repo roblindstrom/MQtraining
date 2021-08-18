@@ -11,6 +11,10 @@ namespace MQtraining.UI.Pages.CreateItem
 {
     public partial class CreateItem
     {
+        protected string Message = string.Empty;
+        protected string StatusClass = string.Empty;
+        protected bool Saved;
+
         public ItemRequest ItemRequest { get; set; } =
             new ItemRequest {  };
 
@@ -18,11 +22,10 @@ namespace MQtraining.UI.Pages.CreateItem
         public IItemDataService ItemDataService { get; set; }
         protected async Task HandleValidSubmit()
         {
-            
-            
-            await ItemDataService.CreateItem(ItemRequest);
-
-            StateHasChanged();
+                await ItemDataService.CreateItem(ItemRequest);
+                StateHasChanged();
         }
+
+       
     }
 }
