@@ -1,4 +1,5 @@
-﻿using MQtraining.Shared.RequestModels;
+﻿using Microsoft.AspNetCore.Components;
+using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,12 @@ namespace MQtraining.UI.Services.Items
     public class ItemDataService : IItemDataService
     {
         private readonly HttpClient _httpClient;
+        private readonly NavigationManager _navigationManager;
 
-        public ItemDataService(HttpClient httpClient)
+        public ItemDataService(HttpClient httpClient, NavigationManager navigationManager)
         {
             _httpClient = httpClient;
+            _navigationManager = navigationManager;
         }
 
         public async Task<ItemResponse> CreateItem(ItemRequest itemRequest)
@@ -29,6 +32,8 @@ namespace MQtraining.UI.Services.Items
 
             if (response.IsSuccessStatusCode)
             {
+                _navigationManager.NavigateTo("items");
+                
                 return await JsonSerializer.DeserializeAsync<ItemResponse>(await response.Content.ReadAsStreamAsync());
             }
             else 
