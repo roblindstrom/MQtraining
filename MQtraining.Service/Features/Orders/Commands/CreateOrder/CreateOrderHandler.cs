@@ -28,15 +28,18 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
 
             var order = new Order()
             {
-                OrderId = new Guid(),
-                Password = new Guid(),
-                LineItems = _mapper.Map<IEnumerable<LineItem>>(orderRequest.LineItems)
+                OrderId = Guid.NewGuid(),
+                Password = Guid.NewGuid(),
+                LineItems = _mapper.Map<List<LineItem>>(orderRequest.LineItems)
             };
+
+
 
             await _orderRepository.AddAsync(order);
             var orderResponse = _mapper.Map<OrderResponse>(order);
-            orderResponse.Items = _mapper.Map<IEnumerable<DTOLineItem>>(order.LineItems);
+            orderResponse.LineItems = _mapper.Map<List<LineItemResponse>>(order.LineItems);
 
+            
 
 
             return orderResponse;

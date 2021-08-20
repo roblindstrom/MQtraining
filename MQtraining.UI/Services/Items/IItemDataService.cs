@@ -10,6 +10,8 @@ namespace MQtraining.UI.Services.Items
     public interface IItemDataService
     {
         Task<ItemResponse> CreateItem(ItemRequest itemRequest);
-        Task<IEnumerable<ItemResponse>> GetAllItems();
+        Task<ICollection<ItemResponse>> GetAllItems();
+
+        Task<ItemResponse> GetItemById(Guid ItemId);
     }
 }

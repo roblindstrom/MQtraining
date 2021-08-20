@@ -190,3 +190,7 @@ C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\CreateItem\CreateItem.razor.g.cs
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllItems\ShowAllItems.razor.g.cs
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllOrders\ShowAllOrders.razor.g.cs
+C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\CreateItem\CreateItem.razor.g.cs
+C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\ShowAllItems\ShowAllItems.razor.g.cs
+C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\CreateItem\CreateItem.razor.g.cs
+C:\Users\Robin\source\repos\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllItems\ShowAllItems.razor.g.cs

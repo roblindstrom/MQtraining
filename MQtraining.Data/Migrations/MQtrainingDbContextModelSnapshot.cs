@@ -33,7 +33,7 @@ namespace MQtraining.Data.Migrations
 
                     b.HasKey("ItemId");
 
-                    b.ToTable("Item");
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("MQtraining.Shared.Models.LineItem", b =>
@@ -57,7 +57,7 @@ namespace MQtraining.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("LineItem");
+                    b.ToTable("LineItems");
                 });
 
             modelBuilder.Entity("MQtraining.Shared.Models.Order", b =>

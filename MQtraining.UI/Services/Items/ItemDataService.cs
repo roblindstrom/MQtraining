@@ -42,10 +42,16 @@ namespace MQtraining.UI.Services.Items
             }
         }
 
-        public async Task<IEnumerable<ItemResponse>> GetAllItems()
+        public async Task<ICollection<ItemResponse>> GetAllItems()
         {
-            return await JsonSerializer.DeserializeAsync<IEnumerable<ItemResponse>>
+            return await JsonSerializer.DeserializeAsync<ICollection<ItemResponse>>
                 (await _httpClient.GetStreamAsync($"api/v1/item"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+
+        public async Task<ItemResponse> GetItemById(Guid ItemId)
+        {
+            return await JsonSerializer.DeserializeAsync<ItemResponse>
+                (await _httpClient.GetStreamAsync($"api/v1/item/{ItemId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }
 }

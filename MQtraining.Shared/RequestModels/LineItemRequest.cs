@@ -9,7 +9,6 @@ namespace MQtraining.Shared.RequestModels
 
         public int Quantity { get; set; }
 
-        public DTOOrder Order { get; set; }
-        public DTOItem Item { get; set; }
+        public ItemRequest Item { get; set; }
     }
 }

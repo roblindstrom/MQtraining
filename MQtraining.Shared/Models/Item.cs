@@ -11,7 +11,7 @@ namespace MQtraining.Shared.Models
 
         public double Price { get; set; }
 
-        public IEnumerable<LineItem> LineItems { get; set; }
+        public ICollection<LineItem> LineItems { get; set; }
 
     }
 }

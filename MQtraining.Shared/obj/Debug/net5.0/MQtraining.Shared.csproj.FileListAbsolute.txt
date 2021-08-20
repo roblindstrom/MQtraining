@@ -14,7 +14,6 @@ C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\bin\Debug\net5.0\MQtrai
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\bin\Debug\net5.0\MQtraining.Shared.dll
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\bin\Debug\net5.0\ref\MQtraining.Shared.dll
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\bin\Debug\net5.0\MQtraining.Shared.pdb
-C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.csprojAssemblyReference.cache
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.AssemblyInfoInputs.cache
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.AssemblyInfo.cs
@@ -22,3 +21,4 @@ C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtrai
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.dll
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\ref\MQtraining.Shared.dll
 C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.pdb
+C:\Users\Robin\source\repos\MQtraining\MQtraining.Shared\obj\Debug\net5.0\MQtraining.Shared.csprojAssemblyReference.cache

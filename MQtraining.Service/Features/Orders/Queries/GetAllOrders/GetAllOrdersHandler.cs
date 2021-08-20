@@ -26,7 +26,7 @@ namespace MQtraining.Services.Features.Orders.Queries.GetAllOrders
             foreach (var order in orders)
             {
                 var orderResponse = _mapper.Map<OrderResponse>(order);
-                orderResponse.Items = _mapper.Map<List<DTOLineItem>>(order.LineItems);
+                orderResponse.LineItems = _mapper.Map<List<LineItemResponse>>(order.LineItems);
                 orderResponses.Add(orderResponse);
             }
 

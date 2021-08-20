@@ -9,12 +9,39 @@
 }
 else
 {
+
+    <tr>
+
+        <td>@Order.OrderId</td>
+        @foreach (var lineItem in Order.LineItems)
+        {
+            <td>@lineItem.Item.Name</td>
+            <td>@lineItem.Item.Price</td>
+            <td>@lineItem.Item.ItemId</td>
+
+        }
+
+    </tr>
+    <button class="btn btn-primary table-btn" @onclick="() => CreateOrder(Order)">
+        Confirm Order
+    </button>
+
     <table class="table">
+
         <thead>
+
+            
+            
+
+
             <tr>
                 <th>Item ID</th>
                 <th>Name</th>
                 <th>Price</th>
+                <th>Add Item to Order</th>
+                <th></th>
+                <th></th>
+                <th>New Item:</th>
 
                 <th>
                     <a href="@($"createitem/")" class="btn btn-primary table-btn">
@@ -26,28 +53,33 @@ else
         <tbody>
             @foreach (var item in Items)
             {
-            <tr>
-                <td>
-                    @item.ItemId
-                </td>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
-                        <i class="fas fa-info-circle"></i>
-                    </a>
-                </td>
-                <td>
-                    <a href="@($"itemedit/{item.ItemId}")" class="btn btn-primary table-btn">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </td>
-                
-            </tr>
+                <tr>
+                    <td>
+                        @item.ItemId
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        <button class="btn btn-primary table-btn" @onclick="() => AddLineItemToOrder(item.ItemId)">
+                            <i class="fas fa-plus-square"></i>
+                        </button>
+                    </td>
+                    <td>
+                        <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@($"itemedit/{item.ItemId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+
+                </tr>
             }
 
 

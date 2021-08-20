@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using System;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MQtraining.Data.Migrations
 {
@@ -8,7 +8,7 @@ namespace MQtraining.Data.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Item",
+                name: "Items",
                 columns: table => new
                 {
                     ItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -17,7 +17,7 @@ namespace MQtraining.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Item", x => x.ItemId);
+                    table.PrimaryKey("PK_Items", x => x.ItemId);
                 });
 
             migrationBuilder.CreateTable(
@@ -33,7 +33,7 @@ namespace MQtraining.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "LineItem",
+                name: "LineItems",
                 columns: table => new
                 {
                     LineItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
@@ -43,15 +43,15 @@ namespace MQtraining.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LineItem", x => x.LineItemId);
+                    table.PrimaryKey("PK_LineItems", x => x.LineItemId);
                     table.ForeignKey(
-                        name: "FK_LineItem_Item_ItemId",
+                        name: "FK_LineItems_Items_ItemId",
                         column: x => x.ItemId,
-                        principalTable: "Item",
+                        principalTable: "Items",
                         principalColumn: "ItemId",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_LineItem_Orders_OrderId",
+                        name: "FK_LineItems_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderId",
@@ -59,23 +59,23 @@ namespace MQtraining.Data.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_LineItem_ItemId",
-                table: "LineItem",
+                name: "IX_LineItems_ItemId",
+                table: "LineItems",
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_LineItem_OrderId",
-                table: "LineItem",
+                name: "IX_LineItems_OrderId",
+                table: "LineItems",
                 column: "OrderId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "LineItem");
+                name: "LineItems");
 
             migrationBuilder.DropTable(
-                name: "Item");
+                name: "Items");
 
             migrationBuilder.DropTable(
                 name: "Orders");

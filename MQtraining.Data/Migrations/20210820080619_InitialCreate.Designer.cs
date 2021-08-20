@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MQtraining.Data.Migrations
 {
     [DbContext(typeof(MQtrainingDbContext))]
-    [Migration("20210816170002_InitialCreate")]
+    [Migration("20210820080619_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace MQtraining.Data.Migrations
 
                     b.HasKey("ItemId");
 
-                    b.ToTable("Item");
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("MQtraining.Shared.Models.LineItem", b =>
@@ -59,7 +59,7 @@ namespace MQtraining.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("LineItem");
+                    b.ToTable("LineItems");
                 });
 
             modelBuilder.Entity("MQtraining.Shared.Models.Order", b =>

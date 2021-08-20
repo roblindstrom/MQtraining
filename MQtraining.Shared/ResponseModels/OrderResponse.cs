@@ -10,6 +10,6 @@ namespace MQtraining.Shared.ResponseModels
 
         public Guid Password { get; set; }
 
-        public IEnumerable<DTOLineItem> Items { get; set; }
+        public ICollection<LineItemResponse> LineItems { get; set; }
     }
 }

@@ -13,14 +13,13 @@ namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
         private readonly IMapper _mapper;
         private readonly ILineItemRepository _lineItemRepository;
         private readonly IItemRepository _itemRepository;
-        private readonly IOrderRepository _orderRepository;
 
-        public CreateLineItemHandler(IMapper mapper, ILineItemRepository lineItemRepository, IItemRepository itemRepository, IOrderRepository orderRepository)
+        public CreateLineItemHandler(IMapper mapper, ILineItemRepository lineItemRepository, IItemRepository itemRepository)
         {
             _mapper = mapper;
             _lineItemRepository = lineItemRepository;
             _itemRepository = itemRepository;
-            _orderRepository = orderRepository;
+            
         }
 
         public async Task<LineItemResponse> CreateLineItem(LineItemRequest lineItemRequest)
@@ -31,8 +30,7 @@ namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
             {
                 LineItemId = new Guid(),
                 Quantity = lineItemRequest.Quantity,
-                Item = await _itemRepository.GetByIdAsync(lineItemRequest.Item.ItemId),
-                Order = await _orderRepository.GetByIdAsync(lineItemRequest.Order.OrderId)
+                Item = await _itemRepository.GetByIdAsync(lineItemRequest.Item.ItemId)
             };
 
             await _lineItemRepository.AddAsync(lineitem);

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MQtraining.Services.Features.Items.Commands.CreateItem;
 using MQtraining.Services.Features.Items.Queries.GetAllItems;
+using MQtraining.Services.Features.Items.Queries.GetItemById;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -16,12 +18,14 @@ namespace MQtraining.API.Controllers.V1
     {
         private readonly ICreateItemService _createItemService;
         private readonly IGetAllItemsService _getAllItemsService;
+        private readonly IGetItemByIdService _getItemByIdService;
 
 
-        public ItemController(ICreateItemService createItemService, IGetAllItemsService getAllItemsService)
+        public ItemController(ICreateItemService createItemService, IGetAllItemsService getAllItemsService, IGetItemByIdService getItemByIdService)
         {
             _createItemService = createItemService;
             _getAllItemsService = getAllItemsService;
+            _getItemByIdService = getItemByIdService;
         }
 
         [HttpPost]
@@ -34,6 +38,12 @@ namespace MQtraining.API.Controllers.V1
         public async Task<List<ItemResponse>> GetAllItems() 
         {
             return await _getAllItemsService.GetAllItems();
+        }
+
+        [HttpGet("{itemId}")]
+        public async Task<ItemResponse> GetItemById(Guid itemId)
+        {
+            return await _getItemByIdService.GetItemById(itemId);
         }
 
     }
