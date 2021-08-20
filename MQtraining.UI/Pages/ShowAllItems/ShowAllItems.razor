@@ -9,6 +9,7 @@
 }
 else
 {
+
     <table class="table">
         <thead>
             <tr>
@@ -26,31 +27,37 @@ else
         <tbody>
             @foreach (var item in Items)
             {
-            <tr>
-                <td>
-                    @item.ItemId
-                </td>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Price
-                </td>
-                <td>
-                    <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
-                        <i class="fas fa-info-circle"></i>
-                    </a>
-                </td>
-                <td>
-                    <a href="@($"itemedit/{item.ItemId}")" class="btn btn-primary table-btn">
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </td>
-                
-            </tr>
+                <tr>
+                    <td>
+                        @item.ItemId
+                    </td>
+                    <td>
+                        @item.Name
+                    </td>
+                    <td>
+                        @item.Price
+                    </td>
+                    <td>
+                        <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-info-circle"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@($"itemedit/{item.ItemId}")" class="btn btn-primary table-btn">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <button @onclick="() => DeleteItem(item.ItemId)" class="btn btn-primary table-btn">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+
+                </tr>
             }
 
 
         </tbody>
     </table>
-}
+    
+    }

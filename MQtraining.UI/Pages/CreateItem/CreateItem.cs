@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages.CreateItem
 {
-    public partial class CreateItem
+    public partial class CreateItem : ComponentBase
     {
         protected string Message = string.Empty;
         protected string StatusClass = string.Empty;
@@ -20,6 +20,7 @@ namespace MQtraining.UI.Pages.CreateItem
 
         [Inject]
         public IItemDataService ItemDataService { get; set; }
+        
         protected async Task HandleValidSubmit()
         {
                 await ItemDataService.CreateItem(ItemRequest);

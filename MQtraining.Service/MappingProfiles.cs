@@ -21,6 +21,7 @@ namespace MQtraining.Services
             CreateMap<Item, ItemRequest>();
             CreateMap<Item, ItemResponse>();
             CreateMap<ItemRequest, Item>();
+            CreateMap<ItemRequest, ItemResponse>();
 
             //LineItem Maps
             CreateMap<LineItem, LineItemRequest>();

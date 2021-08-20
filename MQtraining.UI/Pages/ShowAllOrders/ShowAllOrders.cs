@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages.ShowAllOrders
 {
-    public partial class ShowAllOrders
+    public partial class ShowAllOrders : ComponentBase
     {
         public IEnumerable<OrderResponse> Orders { get; set; }
 

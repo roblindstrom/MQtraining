@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.Items.Commands.CreateItem
 {
-    class CreateItemHandler : ICreateItemService
+    public class CreateItemHandler : ICreateItemService
     {
         private readonly IMapper _mapper;
         private readonly IItemRepository _itemRepository;
