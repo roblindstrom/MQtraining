@@ -11,5 +11,8 @@ namespace MQtraining.UI.Services.Items
     {
         Task<ItemResponse> CreateItem(ItemRequest itemRequest);
         Task<IEnumerable<ItemResponse>> GetAllItems();
+        Task UpdateItem(ItemRequest item);
+        Task DeleteItem(Guid itemId);
+        Task<ItemRequest> GetItemDetails(Guid itemId);
     }
 }

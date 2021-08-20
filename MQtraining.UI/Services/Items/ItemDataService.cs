@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace MQtraining.UI.Services.Items
 {
-    public class ItemDataService : IItemDataService
+    public class ItemDataService : ComponentBase, IItemDataService 
     {
         private readonly HttpClient _httpClient;
         private readonly NavigationManager _navigationManager;
@@ -46,6 +46,32 @@ namespace MQtraining.UI.Services.Items
         {
             return await JsonSerializer.DeserializeAsync<IEnumerable<ItemResponse>>
                 (await _httpClient.GetStreamAsync($"api/v1/item"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        }
+
+        public async Task UpdateItem(ItemRequest item)
+        {
+            var itemJson =
+                new StringContent(JsonSerializer.Serialize(item), Encoding.UTF8, "application/json");
+
+            await _httpClient.PutAsync($"api/v1/item", itemJson);
+        }
+
+        public async Task DeleteItem(Guid itemId)
+        {
+
+            var response = await _httpClient.DeleteAsync($"api/v1/item/{itemId}");
+
+            if (response.IsSuccessStatusCode)
+            {
+                _navigationManager.NavigateTo("items", forceLoad: true);
+            }
+
+        }
+
+        public async Task<ItemRequest> GetItemDetails(Guid itemId)
+        {
+            return await JsonSerializer.DeserializeAsync<ItemRequest>
+                (await _httpClient.GetStreamAsync($"api/v1/item/{itemId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }
 }

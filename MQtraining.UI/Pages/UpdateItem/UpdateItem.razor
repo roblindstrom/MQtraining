@@ -1,0 +1,34 @@
+﻿@page "/itemedit/{ItemId:guid}"
+
+
+<h3>UpdateItem</h3>
+
+
+<section>
+    <h1 class="page-title">Details for @ItemRequest.Name @ItemRequest.Price</h1>
+
+    <EditForm Model="@ItemRequest" OnValidSubmit="@HandleValidSubmit" >
+
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div>
+            @ItemId
+        </div>
+        <div class="form-group row">
+            <label for="Name" class="col-sm-3">Name: </label>
+            <InputText id="Name" @bind-Value="@ItemRequest.Name" class="form-control col-sm-8" placeholder="Enter item name"></InputText>
+            <ValidationMessage For="@(() => ItemRequest.Name)" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Price" class="col-sm-3">Price: </label>
+            <InputNumber id="price" class="form-control col-sm-8" @bind-Value="@ItemRequest.Price" placeholder="Enter item price"></InputNumber>
+            <ValidationMessage For="@(() => ItemRequest.Price)" />
+        </div>
+
+        <button type="submit" class="btn btn-primary" @onclick="() => EditItem(ItemRequest)">Save item</button>
+
+    </EditForm>
+
+    </section>
