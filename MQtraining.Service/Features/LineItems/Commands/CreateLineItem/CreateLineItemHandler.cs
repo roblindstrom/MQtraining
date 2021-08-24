@@ -28,9 +28,10 @@ namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
 
             var lineitem = new LineItem()
             {
-                LineItemId = new Guid(),
+                ItemId = lineItemRequest.ItemId,
+                OrderId = lineItemRequest.OrderId,
                 Quantity = lineItemRequest.Quantity,
-                Item = await _itemRepository.GetByIdAsync(lineItemRequest.Item.ItemId)
+                Item = await _itemRepository.GetByIdAsync(lineItemRequest.ItemId)
             };
 
             await _lineItemRepository.AddAsync(lineitem);

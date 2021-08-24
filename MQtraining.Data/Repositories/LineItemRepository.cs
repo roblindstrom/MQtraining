@@ -1,5 +1,9 @@
 ﻿using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
+using MQtraining.Shared.RequestModels;
+using MQtraining.Shared.ResponseModels;
+using System;
+using System.Threading.Tasks;
 
 namespace MQtraining.Data.Repositories
 {
@@ -11,5 +15,6 @@ namespace MQtraining.Data.Repositories
             _MQtrainingDbContext = mqtrainingDbContext;
         }
 
+        
     }
 }

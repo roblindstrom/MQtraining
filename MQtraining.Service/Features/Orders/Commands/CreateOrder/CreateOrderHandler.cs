@@ -14,35 +14,42 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
     {
 
         private readonly IOrderRepository _orderRepository;
+        private readonly ILineItemRepository _lineItemRepository;
+        private readonly IItemRepository _itemRepository;
         private readonly IMapper _mapper;
 
-        public CreateOrderHandler(IMapper mapper, IOrderRepository orderRepository)
+        public CreateOrderHandler(IMapper mapper, IOrderRepository orderRepository, ILineItemRepository lineItemRepository, IItemRepository itemRepository)
         {
             _mapper = mapper;
             _orderRepository = orderRepository;
+            _lineItemRepository = lineItemRepository;
+            _itemRepository = itemRepository;
         }
 
 
         public async Task<OrderResponse> CreateOrder(OrderRequest orderRequest)
         {
 
-            var order = new Order()
+            Order order = new Order
             {
-                OrderId = Guid.NewGuid(),
-                Password = Guid.NewGuid(),
-                LineItems = _mapper.Map<List<LineItem>>(orderRequest.LineItems)
+                OrderId = orderRequest.OrderId,
+                Password = orderRequest.Password,
+                LineItems = new List<LineItem>()
+                
+            };
+            await _orderRepository.AddAsync(order);
+
+            foreach (var lineitemRequest in orderRequest.LineItems)
+            {
+                var lineitem = _mapper.Map<LineItem>(lineitemRequest);
+                lineitem.OrderId = order.OrderId;
+                lineitem.ItemId = lineitemRequest.ItemId;
+                lineitem.Item = await _itemRepository.GetByIdAsync(lineitemRequest.ItemId);
+                await _lineItemRepository.AddAsync(lineitem);
             };
 
-
-
-            await _orderRepository.AddAsync(order);
-            var orderResponse = _mapper.Map<OrderResponse>(order);
-            orderResponse.LineItems = _mapper.Map<List<LineItemResponse>>(order.LineItems);
-
             
-
-
-            return orderResponse;
+            return _mapper.Map<OrderResponse>(order);
 
         }
     }

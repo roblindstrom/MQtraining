@@ -10,7 +10,7 @@ namespace MQtraining.Data.Configurations
         public void Configure(EntityTypeBuilder<LineItem> modelBuilder)
         {
             modelBuilder
-                .HasKey(lineItem => lineItem.LineItemId);
+                .HasKey(li => new { li.ItemId, li.OrderId });
 
             modelBuilder
                 .HasOne(lineItem => lineItem.Order)

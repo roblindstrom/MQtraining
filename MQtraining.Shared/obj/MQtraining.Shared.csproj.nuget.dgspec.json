@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj": {}
+    "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj": {
+    "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj",
         "projectName": "MQtraining.Shared",
-        "projectPath": "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj",
+        "projectPath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Shared\\MQtraining.Shared.csproj",
         "packagesPath": "C:\\Users\\Robin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.Shared\\obj\\",
+        "outputPath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Robin\\AppData\\Roaming\\NuGet\\NuGet.Config",

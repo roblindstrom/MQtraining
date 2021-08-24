@@ -61,7 +61,7 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
             var itemRequest = Mapper.Map<ItemRequest>(itemResponse);
 
-            LineItemRequest lineitem = new LineItemRequest { Item = itemRequest, LineItemId = Guid.NewGuid() };
+            LineItemRequest lineitem = new LineItemRequest { Item = itemRequest, ItemId = itemId};
 
             lineitem.Item = itemRequest;
 
@@ -71,6 +71,7 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
         public async Task CreateOrder(OrderRequest orderRequest)
         {
+            orderRequest.Password = Guid.NewGuid();
             await OrderDataService.CreateOrder(orderRequest);
         }
 

@@ -4,7 +4,9 @@ namespace MQtraining.Shared.Models
 {
     public class LineItem
     {
-        public Guid LineItemId { get; set; }
+        public Guid ItemId { get; set; }
+
+        public Guid OrderId { get; set; }
 
         public int Quantity { get; set; }
 

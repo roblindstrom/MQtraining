@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MQtraining.Data.Migrations
 {
     [DbContext(typeof(MQtrainingDbContext))]
-    [Migration("20210820080619_InitialCreate")]
+    [Migration("20210824080827_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,22 +40,16 @@ namespace MQtraining.Data.Migrations
 
             modelBuilder.Entity("MQtraining.Shared.Models.LineItem", b =>
                 {
-                    b.Property<Guid>("LineItemId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("ItemId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("ItemId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("OrderId")
+                    b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("LineItemId");
-
-                    b.HasIndex("ItemId");
+                    b.HasKey("ItemId", "OrderId");
 
                     b.HasIndex("OrderId");
 
@@ -80,11 +74,15 @@ namespace MQtraining.Data.Migrations
                 {
                     b.HasOne("MQtraining.Shared.Models.Item", "Item")
                         .WithMany("LineItems")
-                        .HasForeignKey("ItemId");
+                        .HasForeignKey("ItemId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("MQtraining.Shared.Models.Order", "Order")
                         .WithMany("LineItems")
-                        .HasForeignKey("OrderId");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Item");
 

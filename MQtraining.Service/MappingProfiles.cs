@@ -15,6 +15,7 @@ namespace MQtraining.Services
             CreateMap<Order, OrderRequest>();
             CreateMap<Order, OrderResponse>();
             CreateMap<OrderRequest, Order>();
+            CreateMap<Order, DTOOrder>();
 
             //Item Maps
             CreateMap<ItemResponse, ItemRequest>();

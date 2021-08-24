@@ -13,7 +13,8 @@ namespace MQtraining.Data.Configurations
 
             modelBuilder
                 .HasMany(item => item.LineItems)
-                .WithOne(lineItem => lineItem.Item);
+                .WithOne(lineItem => lineItem.Item)
+                .HasForeignKey(lineItem => lineItem.ItemId);
         }
     }
 }

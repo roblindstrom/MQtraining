@@ -36,32 +36,26 @@ namespace MQtraining.Data.Migrations
                 name: "LineItems",
                 columns: table => new
                 {
-                    LineItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Quantity = table.Column<int>(type: "int", nullable: false),
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
-                    ItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    ItemId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LineItems", x => x.LineItemId);
+                    table.PrimaryKey("PK_LineItems", x => new { x.ItemId, x.OrderId });
                     table.ForeignKey(
                         name: "FK_LineItems_Items_ItemId",
                         column: x => x.ItemId,
                         principalTable: "Items",
                         principalColumn: "ItemId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_LineItems_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
                         principalColumn: "OrderId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_LineItems_ItemId",
-                table: "LineItems",
-                column: "ItemId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_LineItems_OrderId",
