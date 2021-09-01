@@ -72,7 +72,9 @@ namespace MQtraining.UI.Pages.ShowAllItems
         public async Task CreateOrder(OrderRequest orderRequest)
         {
             orderRequest.Password = Guid.NewGuid();
-            await OrderDataService.CreateOrder(orderRequest);
+             await OrderDataService.CreateOrder(orderRequest);
+
+            
         }
 
 

@@ -29,6 +29,7 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
 
         public async Task<OrderResponse> CreateOrder(OrderRequest orderRequest)
         {
+            var lineItemList = new List<LineItem>();
 
             Order order = new Order
             {
@@ -37,6 +38,7 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
                 LineItems = new List<LineItem>()
                 
             };
+
             await _orderRepository.AddAsync(order);
 
             foreach (var lineitemRequest in orderRequest.LineItems)
@@ -46,9 +48,12 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
                 lineitem.ItemId = lineitemRequest.ItemId;
                 lineitem.Item = await _itemRepository.GetByIdAsync(lineitemRequest.ItemId);
                 await _lineItemRepository.AddAsync(lineitem);
+                lineItemList.Add(lineitem);
             };
+            order.LineItems = lineItemList;
 
-            
+            await _orderRepository.UpdateAsync(order);
+
             return _mapper.Map<OrderResponse>(order);
 
         }
