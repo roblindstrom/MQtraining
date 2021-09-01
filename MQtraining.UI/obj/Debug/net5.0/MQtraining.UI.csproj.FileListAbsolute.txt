@@ -192,3 +192,5 @@ C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowAllOrders\ShowAllOrders.razor.g.cs
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\UpdateItem\UpdateItem.razor.g.cs
 C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\UpdateItem\UpdateItem.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\RazorDeclaration\Pages\ShowSpecificItem\ShowSpecificItem.razor.g.cs
+C:\Users\Pontus\Desktop\MqMedRob\MQtraining\MQtraining.UI\obj\Debug\net5.0\Razor\Pages\ShowSpecificItem\ShowSpecificItem.razor.g.cs

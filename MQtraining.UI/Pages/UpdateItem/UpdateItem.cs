@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Components;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using MQtraining.UI.Services.Items;
@@ -16,26 +17,29 @@ namespace MQtraining.UI.Pages.UpdateItem
 
         [Inject]
         public IItemDataService ItemDataService { get; set; }
+        [Inject]
+        public IMapper Mapper { get; set; }
         [Parameter]
         public Guid ItemId { get; set; }
         
-        public ItemRequest ItemRequest { get; set; } = new ItemRequest { };
+        public ItemResponse ItemResponse { get; set; } = new ItemResponse { };
 
-        protected async Task EditItem(ItemRequest itemRequest) 
-        {
+        //protected async Task EditItem(ItemRequest itemRequest) 
+        //{
 
-            await ItemDataService.UpdateItem(itemRequest);
-        }
+        //    await ItemDataService.UpdateItem(itemRequest);
+        //}
 
 
         protected override async Task OnInitializedAsync()
         {
-            ItemRequest = await ItemDataService.GetItemDetails(ItemId);
+            ItemResponse = await ItemDataService.GetItemDetails(ItemId);
         }
 
         protected async Task HandleValidSubmit()
         {
-            await ItemDataService.UpdateItem(ItemRequest);
+            var itemRequest = Mapper.Map<ItemRequest>(ItemResponse);
+            await ItemDataService.UpdateItem(itemRequest);
 
             NavigationManager.NavigateTo("items");
         }

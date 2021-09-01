@@ -13,6 +13,6 @@ namespace MQtraining.UI.Services.Items
         Task<IEnumerable<ItemResponse>> GetAllItems();
         Task UpdateItem(ItemRequest item);
         Task DeleteItem(Guid itemId);
-        Task<ItemRequest> GetItemDetails(Guid itemId);
+        Task<ItemResponse> GetItemDetails(Guid itemId);
     }
 }
