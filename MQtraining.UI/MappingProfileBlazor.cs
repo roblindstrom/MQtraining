@@ -12,6 +12,9 @@ namespace MQtraining.UI
             CreateMap<ItemResponse, ItemRequest>();
             CreateMap<ItemRequest, ItemResponse>();
 
+            //Order Maps
+            CreateMap<OrderResponse, OrderRequest>();
+            CreateMap<OrderRequest, OrderResponse>();
         }
     }
 }

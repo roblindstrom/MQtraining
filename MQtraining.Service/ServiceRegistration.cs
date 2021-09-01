@@ -10,6 +10,7 @@ using MQtraining.Services.Features.Items.Queries.GetItemById;
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
 using MQtraining.Services.Features.Orders.Queries.GetAllOrders;
+using MQtraining.Services.Features.Orders.Queries.GetOrderById;
 using MQtraining.Shared.IRepository;
 using System.Reflection;
 
@@ -26,6 +27,7 @@ namespace MQtraining.Services
             services.AddScoped<IOrderRepository, OrderRepository>();
             services.AddScoped<ICreateOrderService, CreateOrderHandler>();
             services.AddScoped<IGetAllOrdersService, GetAllOrdersHandler>();
+            services.AddScoped<IGetOrderByIdService, GetOrderByIdHandler>();
 
             //Item services
             services.AddScoped<IItemRepository, ItemRepository>();

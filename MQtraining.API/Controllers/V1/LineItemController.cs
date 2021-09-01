@@ -2,6 +2,7 @@
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MQtraining.API.Controllers.V1
@@ -11,6 +12,7 @@ namespace MQtraining.API.Controllers.V1
     public class LineItemController : Controller
     {
         private readonly ICreateLineItemService _createLineItemService;
+        
 
         public LineItemController(ICreateLineItemService createLineItemService)
         {
@@ -22,5 +24,7 @@ namespace MQtraining.API.Controllers.V1
         {
             return await _createLineItemService.CreateLineItem(lineItemRequest);
         }
+
+       
     }
 }

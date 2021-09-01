@@ -1,5 +1,6 @@
 ﻿using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -9,6 +10,6 @@ namespace MQtraining.UI.Services.Orders
     {
         Task<ICollection<OrderResponse>> GetAllOrders();
         Task<OrderResponse> CreateOrder(OrderRequest orderRequest);
-
+        Task<OrderResponse> GetOrderById(Guid OrderId);
     }
 }

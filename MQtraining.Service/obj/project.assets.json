@@ -5808,19 +5808,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Robin\\.nuget\\packages\\": {}
+    "C:\\Users\\Pontus\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Service\\MQtraining.Services.csproj",
+      "projectUniqueName": "C:\\Users\\Pontus\\Desktop\\MqMedRob\\MQtraining\\MQtraining.Service\\MQtraining.Services.csproj",
       "projectName": "MQtraining.Services",
-      "projectPath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Service\\MQtraining.Services.csproj",
-      "packagesPath": "C:\\Users\\Robin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Service\\obj\\",
+      "projectPath": "C:\\Users\\Pontus\\Desktop\\MqMedRob\\MQtraining\\MQtraining.Service\\MQtraining.Services.csproj",
+      "packagesPath": "C:\\Users\\Pontus\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Pontus\\Desktop\\MqMedRob\\MQtraining\\MQtraining.Service\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Robin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pontus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5834,8 +5841,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Data\\MQtraining.Data.csproj": {
-              "projectPath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.Data\\MQtraining.Data.csproj"
+            "C:\\Users\\Pontus\\Desktop\\MqMedRob\\MQtraining\\MQtraining.Data\\MQtraining.Data.csproj": {
+              "projectPath": "C:\\Users\\Pontus\\Desktop\\MqMedRob\\MQtraining\\MQtraining.Data\\MQtraining.Data.csproj"
             }
           }
         }
@@ -5882,7 +5889,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

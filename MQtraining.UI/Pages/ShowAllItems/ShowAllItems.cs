@@ -70,7 +70,6 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
         }
 
-
         public async Task CreateOrder(OrderRequest orderRequest)
         {
             orderRequest.Password = Guid.NewGuid();
@@ -78,8 +77,6 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
 
         }
-
-
 
         protected async Task DeleteItem(Guid ItemId)
         {
