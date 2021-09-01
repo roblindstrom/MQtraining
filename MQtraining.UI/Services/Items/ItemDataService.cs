@@ -68,9 +68,9 @@ namespace MQtraining.UI.Services.Items
 
         }
 
-        public async Task<ItemRequest> GetItemDetails(Guid itemId)
+        public async Task<ItemResponse> GetItemDetails(Guid itemId)
         {
-            return await JsonSerializer.DeserializeAsync<ItemRequest>
+            return await JsonSerializer.DeserializeAsync<ItemResponse>
                 (await _httpClient.GetStreamAsync($"api/v1/item/{itemId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }

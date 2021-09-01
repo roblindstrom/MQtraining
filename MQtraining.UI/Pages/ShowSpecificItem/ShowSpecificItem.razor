@@ -1,0 +1,22 @@
+﻿@page "/items/{ItemId:guid}"
+
+
+
+@if (ItemResponse == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<tr>
+    <td>
+        @ItemId
+    </td>
+    <td>
+        @ItemResponse.Name
+    </td>
+    <td>
+        @ItemResponse.Price
+    </td>
+</tr>
+}
