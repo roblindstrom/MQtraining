@@ -1,5 +1,4 @@
-﻿using MQtraining.Shared.DTOModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace MQtraining.Shared.ResponseModels

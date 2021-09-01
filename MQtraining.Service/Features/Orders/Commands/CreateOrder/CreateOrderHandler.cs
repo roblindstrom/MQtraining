@@ -1,10 +1,8 @@
 ﻿using AutoMapper;
-using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -36,7 +34,7 @@ namespace MQtraining.Services.Features.Orders.Commands.CreateOrder
                 OrderId = orderRequest.OrderId,
                 Password = orderRequest.Password,
                 LineItems = new List<LineItem>()
-                
+
             };
 
             await _orderRepository.AddAsync(order);

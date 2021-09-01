@@ -3,7 +3,6 @@ using MQtraining.Shared.IRepository;
 using MQtraining.Shared.Models;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
-using System;
 using System.Threading.Tasks;
 
 namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
@@ -19,7 +18,7 @@ namespace MQtraining.Services.Features.LineItems.Commands.CreateLineItem
             _mapper = mapper;
             _lineItemRepository = lineItemRepository;
             _itemRepository = itemRepository;
-            
+
         }
 
         public async Task<LineItemResponse> CreateLineItem(LineItemRequest lineItemRequest)

@@ -23,6 +23,7 @@ namespace MQtraining.Services
             CreateMap<Item, ItemResponse>();
             CreateMap<ItemRequest, Item>();
             CreateMap<Item, DTOItem>();
+            CreateMap<ItemRequest, ItemResponse>();
 
             //LineItem Maps
             CreateMap<LineItem, LineItemRequest>();
@@ -31,7 +32,8 @@ namespace MQtraining.Services
             CreateMap<LineItem, DTOLineItem>();
             CreateMap<LineItemRequest, LineItem>();
 
-            var config = new MapperConfiguration(cfg => {
+            var config = new MapperConfiguration(cfg =>
+            {
                 cfg.CreateMap<LineItem, LineItemResponse>();
                 cfg.CreateMap<Item, ItemResponse>();
             });

@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;

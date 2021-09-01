@@ -1,10 +1,6 @@
 ﻿using AutoMapper;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MQtraining.UI
 {
@@ -14,6 +10,8 @@ namespace MQtraining.UI
         {
             //Item Maps
             CreateMap<ItemResponse, ItemRequest>();
+            CreateMap<ItemRequest, ItemResponse>();
+
         }
     }
 }

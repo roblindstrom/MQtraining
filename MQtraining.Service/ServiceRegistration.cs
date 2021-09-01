@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using MQtraining.Data;
 using MQtraining.Data.Repositories;
 using MQtraining.Services.Features.Items.Commands.CreateItem;
+using MQtraining.Services.Features.Items.Commands.DeleteItem;
+using MQtraining.Services.Features.Items.Commands.UpdateItem;
 using MQtraining.Services.Features.Items.Queries.GetAllItems;
 using MQtraining.Services.Features.Items.Queries.GetItemById;
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
@@ -29,6 +31,8 @@ namespace MQtraining.Services
             services.AddScoped<IItemRepository, ItemRepository>();
             services.AddScoped<ICreateItemService, CreateItemHandler>();
             services.AddScoped<IGetAllItemsService, GetAllItemsHandler>();
+            services.AddScoped<IDeleteItemService, DeleteItemHandler>();
+            services.AddScoped<IUpdateItemService, UpdateItemHandler>();
             services.AddScoped<IGetItemByIdService, GetItemByIdHandler>();
 
             //LineItem services

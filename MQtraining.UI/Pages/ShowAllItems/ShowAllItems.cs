@@ -1,6 +1,6 @@
-﻿using AutoMapper;
+
+using AutoMapper;
 using Microsoft.AspNetCore.Components;
-using MQtraining.Shared.Models;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using MQtraining.UI.Services.Items;
@@ -8,7 +8,6 @@ using MQtraining.UI.Services.LineItems;
 using MQtraining.UI.Services.Orders;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages.ShowAllItems
@@ -22,7 +21,7 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
         public ItemRequest Item { get; set; }
 
-        public OrderRequest Order { get; set; } = new OrderRequest() {  };
+        public OrderRequest Order { get; set; } = new OrderRequest() { };
 
         private readonly Guid empty;
 
@@ -38,17 +37,19 @@ namespace MQtraining.UI.Pages.ShowAllItems
         [Inject]
         public IMapper Mapper { get; set; }
 
+        public ItemRequest ItemRequest { get; set; }
+
         protected override async Task OnInitializedAsync()
         {
             Items = await ItemDataService.GetAllItems();
 
             if (Order.OrderId == empty)
             {
-                OrderRequest order = new OrderRequest 
+                OrderRequest order = new OrderRequest
                 {
                     OrderId = Guid.NewGuid()
                 };
-                
+
                 Order = order;
 
             }
@@ -61,7 +62,7 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
             var itemRequest = Mapper.Map<ItemRequest>(itemResponse);
 
-            LineItemRequest lineitem = new LineItemRequest { Item = itemRequest, ItemId = itemId};
+            LineItemRequest lineitem = new LineItemRequest { Item = itemRequest, ItemId = itemId };
 
             lineitem.Item = itemRequest;
 
@@ -69,14 +70,21 @@ namespace MQtraining.UI.Pages.ShowAllItems
 
         }
 
+
         public async Task CreateOrder(OrderRequest orderRequest)
         {
             orderRequest.Password = Guid.NewGuid();
-             await OrderDataService.CreateOrder(orderRequest);
+            await OrderDataService.CreateOrder(orderRequest);
 
-            
+
         }
 
 
+
+        protected async Task DeleteItem(Guid ItemId)
+        {
+            await ItemDataService.DeleteItem(ItemId);
+            StateHasChanged();
+        }
     }
 }

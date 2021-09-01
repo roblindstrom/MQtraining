@@ -64,12 +64,15 @@ else
                         @item.Price
                     </td>
                     <td>
+
                         <button class="btn btn-primary table-btn" @onclick="() => AddLineItemToOrder(item.ItemId)">
                             <i class="fas fa-plus-square"></i>
                         </button>
                     </td>
                     <td>
-                        <a href="@($"item/{item.ItemId}")" class="btn btn-primary table-btn">
+                        
+                        <a href="@($"items/{item.ItemId}")" class="btn btn-primary table-btn">
+
                             <i class="fas fa-info-circle"></i>
                         </a>
                     </td>
@@ -79,10 +82,17 @@ else
                         </a>
                     </td>
 
+                    <td>
+                        <button @onclick="() => DeleteItem(item.ItemId)" class="btn btn-primary table-btn">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </td>
+
                 </tr>
             }
 
 
         </tbody>
     </table>
-}
+    
+    }

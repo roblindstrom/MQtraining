@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.ResponseModels;
 using System.Collections.Generic;

@@ -1,5 +1,4 @@
-﻿using MQtraining.Shared.DTOModels;
-using System;
+﻿using System;
 
 namespace MQtraining.Shared.RequestModels
 {
