@@ -16,15 +16,13 @@ namespace MQtraining.Data.Repositories
             _MQtrainingDbContext = mqtrainingDbContext;
         }
 
-        public Task<Order> GetOrderById(Guid OrderId) 
+        public async Task<Order> GetOrderById(Guid OrderId) 
         {
-            var order = _MQtrainingDbContext.Orders
+            var order = await _MQtrainingDbContext.Orders
                 .Include(o => o.LineItems)
-                .ThenInclude(li => li.Item)
-                .Where(o => o.OrderId == OrderId);
+                .ThenInclude(li => li.Item).FirstOrDefaultAsync(o => o.OrderId == OrderId);
 
             return order;
-
         }
 
     }

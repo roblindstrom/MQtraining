@@ -7,6 +7,6 @@ namespace MQtraining.Shared.IRepository
 {
     public interface IOrderRepository : IAsyncRepository<Order>
     {
-        Task <Order> GetOrderById(Guid OrderId);
+        Task<Order> GetOrderById(Guid OrderId);
     }
 }

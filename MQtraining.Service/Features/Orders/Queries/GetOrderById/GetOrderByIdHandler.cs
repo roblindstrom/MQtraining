@@ -22,9 +22,9 @@ namespace MQtraining.Services.Features.Orders.Queries.GetOrderById
             _mapper = mapper;
         }
 
-        public Task<OrderResponse> GetOrderById(Guid orderId)
+        public async Task<OrderResponse> GetOrderById(Guid orderId)
         {
-            var order =  _orderRepository.GetOrderById(orderId);
+            var order =  await _orderRepository.GetOrderById(orderId);
             var orderResponse = _mapper.Map<OrderResponse>(order);
             return orderResponse;
         }
