@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O6t4bMMs9IOOUdOdf1TyE/8WCuHyuzMYkw1Mqjtv5au/5yvyf2mPVhZ2gulsX/ZvQ5EzFIHmozpI+lhVvei5QA==",
+  "dgSpecHash": "2jXqxgUEQOiEQLmy6SMIXh8q82pSsTwIwc6j3J0DoYK1KDfKcQPcqpWlRNqvHHU/5kp5jjl98FCOI7fei3vDtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Robin\\source\\repos\\FromGithub\\MQtraining\\MQtraining.API\\MQtraining.API.csproj",
+  "projectFilePath": "C:\\Users\\Robin\\source\\repos\\MQtraining\\MQtraining.API\\MQtraining.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Robin\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\Robin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

@@ -1,0 +1,24 @@
+﻿<h3>ShowSpecificOrder</h3>
+
+@page "/order/{OrderId:guid}"
+
+
+
+@if (OrderResponse == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+<tr>
+    
+        @foreach (var lineItem in OrderResponse.LineItems)
+         {
+            <td>
+                @lineItem.Item.Name
+            </td>
+
+         }
+
+    </tr>
+}

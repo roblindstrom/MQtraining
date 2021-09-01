@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
@@ -43,6 +44,12 @@ namespace MQtraining.UI.Services.Orders
             {
                 return null;
             }
+        }
+
+        public async Task<OrderResponse> GetOrderById(Guid OrderId)
+        {
+            return await JsonSerializer.DeserializeAsync<OrderResponse>
+                (await _httpClient.GetStreamAsync($"api/v1/order/{OrderId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }
 }
