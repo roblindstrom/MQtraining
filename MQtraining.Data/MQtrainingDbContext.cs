@@ -13,6 +13,10 @@ namespace MQtraining.Data
 
         public DbSet<Order> Orders { get; set; }
 
+        public DbSet<Item> Items { get; set; }
+
+        public DbSet<LineItem> LineItems { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

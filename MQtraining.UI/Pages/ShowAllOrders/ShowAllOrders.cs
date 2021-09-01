@@ -8,7 +8,7 @@ namespace MQtraining.UI.Pages.ShowAllOrders
 {
     public partial class ShowAllOrders : ComponentBase
     {
-        public IEnumerable<OrderResponse> Orders { get; set; }
+        public ICollection<OrderResponse> Orders { get; set; }
 
         [Inject]
         public IOrderDataService OrderDataService { get; set; }

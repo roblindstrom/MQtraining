@@ -1,10 +1,7 @@
 ﻿using Microsoft.AspNetCore.Components;
-using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using MQtraining.UI.Services.Items;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages.ShowSpecificItem
@@ -20,7 +17,7 @@ namespace MQtraining.UI.Pages.ShowSpecificItem
 
         protected override async Task OnInitializedAsync()
         {
-            ItemResponse = await ItemDataService.GetItemDetails(ItemId);
+            ItemResponse = await ItemDataService.GetItemById(ItemId);
         }
 
 

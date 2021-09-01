@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using MQtraining.Shared.DTOModels;
 using MQtraining.Shared.IRepository;
 using MQtraining.Shared.ResponseModels;
 using System.Collections.Generic;
@@ -26,7 +25,7 @@ namespace MQtraining.Services.Features.Orders.Queries.GetAllOrders
             foreach (var order in orders)
             {
                 var orderResponse = _mapper.Map<OrderResponse>(order);
-                orderResponse.Items = _mapper.Map<List<DTOLineItem>>(order.LineItems);
+                orderResponse.LineItems = _mapper.Map<List<LineItemResponse>>(order.LineItems);
                 orderResponses.Add(orderResponse);
             }
 

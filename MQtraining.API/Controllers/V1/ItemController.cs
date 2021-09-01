@@ -1,14 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MQtraining.Services.Features.Items.Commands.CreateItem;
-using MQtraining.Services.Features.Items.Commands.DeleteItem;
-using MQtraining.Services.Features.Items.Commands.UpdateItem;
 using MQtraining.Services.Features.Items.Queries.GetAllItems;
-using MQtraining.Services.Features.Items.Queries.GetItem;
+using MQtraining.Services.Features.Items.Queries.GetItemById;
 using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MQtraining.Services.Features.Items.Commands.DeleteItem;
+using MQtraining.Services.Features.Items.Commands.UpdateItem;
 
 namespace MQtraining.API.Controllers.V1
 {
@@ -20,11 +20,11 @@ namespace MQtraining.API.Controllers.V1
     {
         private readonly ICreateItemService _createItemService;
         private readonly IGetAllItemsService _getAllItemsService;
+        private readonly IGetItemByIdService _getItemByIdService;
         private readonly IDeleteItemService _deleteItemService;
         private readonly IUpdateItemService _updateItemService;
-        private readonly IGetItemByIdService _getItemByIdService;
 
-
+        
         public ItemController(ICreateItemService createItemService, IGetAllItemsService getAllItemsService, IDeleteItemService deleteItemService, IUpdateItemService updateItemService, IGetItemByIdService getItemByIdService)
         {
             _createItemService = createItemService;
@@ -41,7 +41,7 @@ namespace MQtraining.API.Controllers.V1
         }
 
         [HttpGet]
-        public async Task<List<ItemResponse>> GetAllItems() 
+        public async Task<List<ItemResponse>> GetAllItems()
         {
             return await _getAllItemsService.GetAllItems();
         }
@@ -63,5 +63,6 @@ namespace MQtraining.API.Controllers.V1
         {
             return await _getItemByIdService.GetItemById(itemId);
         }
+
     }
 }

@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using MQtraining.UI.Services.Items;
+using MQtraining.UI.Services.LineItems;
 using MQtraining.UI.Services.Orders;
 using System;
 using System.Reflection;
@@ -36,6 +37,12 @@ namespace MQtraining.UI
                 client.BaseAddress = new Uri("https://localhost:44337/");
             });
 
+
+            services.AddHttpClient<ILineItemDataService, LineItemDataService>(client =>
+            {
+                client.BaseAddress = new Uri("https://localhost:44337/");
+            });
+
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
@@ -64,6 +71,8 @@ namespace MQtraining.UI
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
+
+
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using MQtraining.Shared.DTOModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace MQtraining.Shared.ResponseModels
@@ -10,6 +9,6 @@ namespace MQtraining.Shared.ResponseModels
 
         public Guid Password { get; set; }
 
-        public IEnumerable<DTOLineItem> Items { get; set; }
+        public ICollection<LineItemResponse> LineItems { get; set; }
     }
 }

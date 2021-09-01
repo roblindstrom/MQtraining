@@ -11,5 +11,6 @@ namespace MQtraining.Data.Repositories
             _MQtrainingDbContext = mqtrainingDbContext;
         }
 
+
     }
 }

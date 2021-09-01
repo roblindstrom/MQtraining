@@ -9,7 +9,7 @@ namespace MQtraining.Shared.Models
 
         public Guid Password { get; set; }
 
-        public IEnumerable<LineItem> LineItems { get; set; }
+        public ICollection<LineItem> LineItems { get; set; }
 
     }
 }

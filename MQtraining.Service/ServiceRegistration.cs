@@ -6,7 +6,7 @@ using MQtraining.Services.Features.Items.Commands.CreateItem;
 using MQtraining.Services.Features.Items.Commands.DeleteItem;
 using MQtraining.Services.Features.Items.Commands.UpdateItem;
 using MQtraining.Services.Features.Items.Queries.GetAllItems;
-using MQtraining.Services.Features.Items.Queries.GetItem;
+using MQtraining.Services.Features.Items.Queries.GetItemById;
 using MQtraining.Services.Features.LineItems.Commands.CreateLineItem;
 using MQtraining.Services.Features.Orders.Commands.CreateOrder;
 using MQtraining.Services.Features.Orders.Queries.GetAllOrders;

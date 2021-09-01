@@ -4,8 +4,6 @@ using MQtraining.Shared.RequestModels;
 using MQtraining.Shared.ResponseModels;
 using MQtraining.UI.Services.Items;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace MQtraining.UI.Pages.UpdateItem
@@ -21,19 +19,13 @@ namespace MQtraining.UI.Pages.UpdateItem
         public IMapper Mapper { get; set; }
         [Parameter]
         public Guid ItemId { get; set; }
-        
+
         public ItemResponse ItemResponse { get; set; } = new ItemResponse { };
-
-        //protected async Task EditItem(ItemRequest itemRequest) 
-        //{
-
-        //    await ItemDataService.UpdateItem(itemRequest);
-        //}
 
 
         protected override async Task OnInitializedAsync()
         {
-            ItemResponse = await ItemDataService.GetItemDetails(ItemId);
+            ItemResponse = await ItemDataService.GetItemById(ItemId);
         }
 
         protected async Task HandleValidSubmit()
@@ -44,7 +36,7 @@ namespace MQtraining.UI.Pages.UpdateItem
             NavigationManager.NavigateTo("items");
         }
 
-       
+
 
 
     }
